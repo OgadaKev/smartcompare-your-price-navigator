@@ -14,7 +14,141 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      price_alerts: {
+        Row: {
+          created_at: string
+          currency: string
+          id: string
+          image_url: string | null
+          last_seen_price: number | null
+          query: string
+          target_price: number
+          title: string
+          triggered_at: string | null
+          user_id: string
+          vendor: string | null
+        }
+        Insert: {
+          created_at?: string
+          currency?: string
+          id?: string
+          image_url?: string | null
+          last_seen_price?: number | null
+          query: string
+          target_price: number
+          title: string
+          triggered_at?: string | null
+          user_id: string
+          vendor?: string | null
+        }
+        Update: {
+          created_at?: string
+          currency?: string
+          id?: string
+          image_url?: string | null
+          last_seen_price?: number | null
+          query?: string
+          target_price?: number
+          title?: string
+          triggered_at?: string | null
+          user_id?: string
+          vendor?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          id: string
+          region: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          id: string
+          region?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          region?: string
+        }
+        Relationships: []
+      }
+      search_cache: {
+        Row: {
+          cache_key: string
+          category: string | null
+          created_at: string
+          expires_at: string
+          payload: Json
+          query: string
+          region: string | null
+        }
+        Insert: {
+          cache_key: string
+          category?: string | null
+          created_at?: string
+          expires_at?: string
+          payload: Json
+          query: string
+          region?: string | null
+        }
+        Update: {
+          cache_key?: string
+          category?: string | null
+          created_at?: string
+          expires_at?: string
+          payload?: Json
+          query?: string
+          region?: string | null
+        }
+        Relationships: []
+      }
+      wishlist_items: {
+        Row: {
+          created_at: string
+          currency: string
+          id: string
+          image_url: string | null
+          offer_key: string
+          price: number
+          product_url: string | null
+          query: string
+          title: string
+          user_id: string
+          vendor: string
+        }
+        Insert: {
+          created_at?: string
+          currency?: string
+          id?: string
+          image_url?: string | null
+          offer_key: string
+          price: number
+          product_url?: string | null
+          query: string
+          title: string
+          user_id: string
+          vendor: string
+        }
+        Update: {
+          created_at?: string
+          currency?: string
+          id?: string
+          image_url?: string | null
+          offer_key?: string
+          price?: number
+          product_url?: string | null
+          query?: string
+          title?: string
+          user_id?: string
+          vendor?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
